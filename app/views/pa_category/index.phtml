@@ -1,0 +1,62 @@
+
+<?php echo $this->getContent() ?>
+
+<div align="right">
+    <?php echo $this->tag->linkTo(array("pa_category/new", "Create pa_category")) ?>
+</div>
+
+<?php echo $this->tag->form(array("pa_category/search", "autocomplete" => "off")) ?>
+
+<div align="center">
+    <h1>Search pa_category</h1>
+</div>
+
+<table>
+    <tr>
+        <td align="right">
+            <label for="id">Id</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("id", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="name">Name</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("name", "size" => 30)) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="pid">Pid</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("pid", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="lft">Lft</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("lft", "type" => "number")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="rgt">Rgt</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("rgt", "type" => "number")) ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td><?php echo $this->tag->submitButton("Search") ?></td>
+    </tr>
+</table>
+
+</form>

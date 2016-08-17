@@ -1,0 +1,75 @@
+<?php echo $this->getContent(); ?>
+
+<?php echo $this->tag->form("pa_rec/save") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo $this->tag->linkTo(array("pa_rec", "Back")) ?></td>
+        <td align="right"><?php echo $this->tag->submitButton("Save") ?></td>
+    </tr>
+</table>
+
+<div align="center">
+    <h1>Edit pa_rec</h1>
+</div>
+
+<table class="table table-border table-bordered table-hover table-striped">
+    <tr>
+        <td align="right">
+            <label for="url">图片地址</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("url", "size" => 30, "class" => "input-text")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="aid">代表的动漫id</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("aid", "type" => "number", "class" => "input-text")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="position">所在位置</label>
+        </td>
+        <td align="left">
+            <span class="select-box">
+            <select name="position" id="choosePosition" class="select">
+                <option value="0">轮播图</option>
+                <option value="1">侧边推荐</option>
+                <option value="2">广告位</option>
+            </select>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="description">附加信息</label>
+        </td>
+        <td align="left">
+            <?php echo $this->tag->textField(array("description", "size" => 30, "class" => "input-text")) ?>
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            <label for="status">目前状态</label>
+        </td>
+        <td align="left">
+        <span class="select-box">
+        <select name="status" id="chooseStatus" class="select">
+            <option value="0">不显示</option>
+            <option value="1">显示</option>
+        </select>
+        </span>
+        </td>
+    </tr>
+
+    <tr>
+        <td><?php echo $this->tag->hiddenField("id") ?></td>
+        <td><?php echo $this->tag->submitButton("Save") ?></td>
+    </tr>
+</table>
+
+</form>

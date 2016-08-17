@@ -1,0 +1,31 @@
+<?php echo $this->tag->form(array("pa_category/create", "class" => "form form-horizontal")) ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo $this->tag->linkTo(array("pa_category", "Go Back")) ?></td>
+        <td align="right"><?php echo $this->tag->submitButton("Save") ?></td>
+    </tr>
+</table>
+
+<?php echo $this->getContent(); ?>
+
+<legend>添加</legend>
+<div class="row cl">
+    <label for="name" class="form-label col-xs-2 col-sm-2">Name</label>
+    <div class="formControls col-xs-4 col-sm-4">
+        <?php echo $this->tag->textField(array("name", "size" => 30, "class" => "input-text")) ?>
+    </div>
+</div>
+
+<div class="row cl">
+    <label for="pid" class="form-label col-xs-2 col-sm-2">Pid</label>
+    <div class="formControls col-xs-4 col-sm-4">
+        <?php echo $this->tag->textField(array("pid", "type" => "number", "class" => "input-text", "value" => '0')) ?>
+    </div>
+</div>
+
+<div class="row cl">
+    <?php echo $this->tag->submitButton(array("Save", "class" => "btn btn-success")) ?>
+</div>
+
+</form>

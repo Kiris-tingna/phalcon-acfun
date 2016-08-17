@@ -1,0 +1,56 @@
+<?php use Phalcon\Tag; ?>
+
+<?php echo $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo $this->tag->linkTo(array("pa_article/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo $this->tag->linkTo(array("pa_article/new", "Create ")); ?>
+        </td>
+    </tr>
+</table>
+
+<table class="browse table table-border table-bordered table-hover" align="center">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Created</th>
+            <th>Published</th>
+            <th>Views</th>
+         </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($page->items as $pa_article) { ?>
+        <tr>
+            <td><?php echo $pa_article->id ?></td>
+            <td><?php echo $pa_article->title ?></td>
+            <td><?php echo mb_substr($pa_article->content, 0, 140, 'utf-8') ?></td>
+            <td><?php echo $pa_article->created_at ?></td>
+            <td><?php echo $pa_article->published_at ?></td>
+            <td><?php echo $pa_article->views ?></td>
+            <td><?php echo $this->tag->linkTo(array("pa_article/edit/" . $pa_article->id, "Edit")); ?></td>
+            <td><?php echo $this->tag->linkTo(array("pa_article/delete/" . $pa_article->id, "Delete")); ?></td>
+        </tr>
+    <?php } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="2" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo $this->tag->linkTo("pa_article/search", "First") ?></td>
+                        <td><?php echo $this->tag->linkTo("pa_article/search?page=" . $page->before, "Previous") ?></td>
+                        <td><?php echo $this->tag->linkTo("pa_article/search?page=" . $page->next, "Next") ?></td>
+                        <td><?php echo $this->tag->linkTo("pa_article/search?page=" . $page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>

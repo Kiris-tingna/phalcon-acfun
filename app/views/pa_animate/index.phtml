@@ -1,0 +1,70 @@
+
+<?php echo $this->getContent() ?>
+<div class="cl pd-5 bg-1 bk-gray mt-10 mb-10">
+    <span class="l">
+        <a href="javascript:;" class="btn btn-danger radius">
+            <i class="Hui-iconfont">&#xe6e2;</i> 批量删除
+        </a>
+        <a href="<?php echo $this->url->get("pa_animate/new") ?>" class="btn btn-primary radius">
+            <i class="Hui-iconfont">&#xe600;</i> 新增单集动漫
+        </a>
+    </span>
+</div>
+
+<?php echo $this->tag->form(array("pa_animate/search", "autocomplete" => "off", "class"=>"form form-horizontal")) ?>
+<legend>检索</legend>
+<div class="row cl">
+    <label for="id" class="form-label col-xs-2 col-sm-2">Id</label>
+    <div class="formControls col-xs-4 col-sm-4">
+        <?php echo $this->tag->textField(array("id", "type" => "number", "class" => "input-text")) ?>
+    </div>
+    <label for="aid" class="form-label col-xs-2 col-sm-2">Aid</label>
+    <div class="formControls col-xs-4 col-sm-4">
+        <?php echo $this->tag->textField(array("aid", "type" => "number", "class" => "input-text")) ?>
+    </div>
+</div>
+
+<div class="row cl">
+    <label for="name" class="form-label col-xs-2 col-sm-2">Name</label>
+    <div class="formControls col-xs-4 col-sm-4">
+        <?php echo $this->tag->textField(array("name", "size" => 30, "class" => "input-text")) ?>
+    </div>
+    <label for="description" class="form-label col-xs-2 col-sm-2">Description</label>
+    <div class="formControls col-xs-4 col-sm-4">
+        <?php echo $this->tag->textField(array("description", "size" => 30, "class" => "input-text")) ?>
+    </div>
+</div>
+
+<div class="row cl">
+    <label for="content" class="form-label col-xs-2 col-sm-2">Content</label>
+    <div class="formControls col-xs-4 col-sm-4">
+        <?php echo $this->tag->textArea(array("content", "cols" => 30, "rows" => 4, "class" => "textarea")) ?>
+    </div>
+    <label for="pid" class="form-label col-xs-2 col-sm-2">Pid</label>
+    <div class="formControls col-xs-4 col-sm-4">
+        <?php echo $this->tag->textField(array("pid", "type" => "number", "class" => "input-text")) ?>
+    </div>
+</div>
+
+<div class="row cl">
+    <label for="vid" class="form-label col-xs-2 col-sm-2">Vid</label>
+    <div class="formControls col-xs-4 col-sm-4">
+        <?php echo $this->tag->textField(array("vid", "size" => 30, "class" => "input-text")) ?>
+    </div>
+    <label for="created_at" class="form-label col-xs-2 col-sm-2">Created</label>
+    <div class="formControls col-xs-4 col-sm-4">
+        <?php echo $this->tag->textField(array("created_at", "size" => 30, "class" => "input-text")) ?>
+    </div>
+</div>
+
+<div class="row cl">
+    <label for="published_at" class="form-label col-xs-2 col-sm-2">Published</label>
+    <div class="formControls col-xs-4 col-sm-4">
+        <?php echo $this->tag->textField(array("published_at", "size" => 30, "class" => "input-text")) ?>
+    </div>
+</div>
+<div class="row cl">
+    <?php echo $this->tag->submitButton(array("Search", "class"=>"btn btn-primary")) ?>
+</div>
+
+</form>

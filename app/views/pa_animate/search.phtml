@@ -1,0 +1,58 @@
+<?php use Phalcon\Tag; ?>
+
+<?php echo $this->getContent(); ?>
+<div class="cl pd-5 bg-1 bk-gray mt-10 mb-10">
+    <span class="l">
+        <a href="<?php echo $this->url->get("pa_animate/index") ?>" class="btn btn-danger radius">
+            <i class="Hui-iconfont">&#xe678;</i> 返回
+        </a>
+        <a href="<?php echo $this->url->get("pa_animate/new") ?>" class="btn btn-primary radius">
+            <i class="Hui-iconfont">&#xe600;</i> 新增单集动漫
+        </a>
+    </span>
+</div>
+
+<div class="mt-20">
+<table class="table table-border table-bg table-bordered table-hover">
+    <thead>
+        <tr class="text-c">
+            <th>Id</th>
+            <th width="40">动画合集</th>
+            <th width="100">名称</th>
+            <th width="100">副标题</th>
+            <th width="120">内容简介</th>
+            <th width="50">图片id</th>
+            <th width="100">视频id</th>
+            <th width="120">创建时间</th>
+            <th width="120">发布时间</th>
+            <th width="130">操作</th>
+         </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($page->items as $pa_animate) { ?>
+        <tr class="text-c">
+            <td><?php echo $pa_animate->id ?></td>
+            <td><?php echo $pa_animate->aid ?></td>
+            <td><?php echo $pa_animate->name ?></td>
+            <td><?php echo $pa_animate->description ?></td>
+            <td><?php echo $pa_animate->content ?></td>
+            <td><?php echo $pa_animate->pid ?></td>
+            <td><?php echo $pa_animate->vid ?></td>
+            <td><?php echo $pa_animate->created_at ?></td>
+            <td><?php echo $pa_animate->published_at ?></td>
+            <td class="td-manage">
+                <?php echo $this->tag->linkTo(array("pa_animate/edit/" . $pa_animate->id, "编辑", "class"=>"btn btn-primary")); ?>
+                <?php echo $this->tag->linkTo(array("pa_animate/delete/" . $pa_animate->id, "删除", "class"=>"btn btn-danger")); ?>
+            </td>
+        </tr>
+    <?php } ?>
+    </tbody>
+</table>
+    <div class="text-l mt-20">
+        <?php echo $this->tag->linkTo(array("pa_animate/search", "首页", "class"=>"btn btn-default")) ?>
+        <?php echo $this->tag->linkTo(array("pa_animate/search?page=" . $page->before, "前一页","class"=>"btn btn-default")) ?>
+        <?php echo $this->tag->linkTo(array("pa_animate/search?page=" . $page->next, "后一页", "class"=>"btn btn-default")) ?>
+        <?php echo $this->tag->linkTo(array("pa_animate/search?page=" . $page->last, "尾页", "class"=>"btn btn-default")) ?>
+        <span class="label label-primary"><?php echo $page->current, "/", $page->total_pages ?></span>
+    </div>
+</div>

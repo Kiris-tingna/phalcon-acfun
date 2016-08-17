@@ -1,0 +1,145 @@
+.container {
+    font-family: "Microsoft YaHei";
+}
+.pa-ppt{
+    position: relative;
+    overflow: auto;
+}
+.pa-ppt li {
+    list-style: none;
+}
+.pa-ppt ul li {
+    float: left;
+}
+.unslider-arrow {
+    position: absolute;
+}
+.unslider-arrow.next{
+    display: block;
+    top:50%;
+    right: 0;
+}
+.unslider-arrow.prev{
+    display: block;
+    top:50%;
+    left: 0;
+}
+.unslider-nav{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+}
+.pa-ppt-item {
+    width: 100%;
+    height: auto;
+}
+.pa-index-col {
+    list-style: none;
+    font-size: 12px;
+}
+.pa-img-warpper{
+    display: block;
+    height: 100px;
+    overflow: hidden;
+}
+.pa-img-large-warpper{
+    display: block;
+    height: 150px;
+    overflow: hidden;
+}
+.pa-index-item {
+    width: 100%;
+    height: auto;
+}
+.pa-tit-desc{
+    height: 34px;
+    overflow: hidden;
+    line-height: 17px;
+    margin-bottom: 0;
+}
+.pa-sub-desc{
+    height: 17px;
+    overflow: hidden;
+    word-break: break-all;
+    color: #c0c0c0;
+}
+
+.z-header{
+    background: transparent;
+    position: relative;
+    z-index: 10000;
+}
+.z-header .z-banner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.z-header .z-banner .z-background{
+    position: absolute;
+    height: 52px;
+    top: -3px;
+    left: -1px;
+    width: 100%;
+
+    -webkit-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+
+    background-position: center 0!important;
+    background-repeat: no-repeat;
+    z-index: 50;
+}
+.z-header .z-banner .z-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+
+.z-header .z-nav{
+    height: 40px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 1px 2px;
+    font-family: "Microsoft YaHei",Arial,Helvetica,sans-serifsans-serif;
+    z-index: 1000;
+}
+
+.z-container {
+    margin: 0 auto;
+    position: relative;
+    text-align: left;
+    z-index: 1000;
+    zoom: 1;
+}
+.z-container .z-menu{
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    height: 40px;
+}
+.z-container .z-menu .z-item {
+    float: left;
+    display: block;
+    padding: 0 30px;
+    list-style-type:none;
+    line-height: 40px;
+}
+.z-img {
+    background: transparent no-repeat center -10px;
+    position: relative;
+    margin: -40px auto 0;
+    height: 170px;
+}
+
+.pa-ppt {
+    height: 310px;
+}

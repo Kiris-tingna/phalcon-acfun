@@ -1,0 +1,51 @@
+<?php use Phalcon\Tag; ?>
+
+<?php echo $this->getContent(); ?>
+<div class="cl pd-5 bg-1 bk-gray mt-10 mb-10">
+    <span class="l">
+        <a href="<?php echo $this->url->get("pa_category/index") ?>" class="btn btn-danger radius">
+            <i class="Hui-iconfont">&#xe678;</i> 返回
+        </a>
+        <a href="<?php echo $this->url->get("pa_category/new") ?>" class="btn btn-primary radius">
+            <i class="Hui-iconfont">&#xe600;</i> 新增分类节点
+        </a>
+    </span>
+</div>
+
+<div class="mt-20">
+    <table class="table table-border table-bg table-bordered table-hover">
+        <thead>
+        <tr>
+            <th width="50">Id</th>
+            <th width="100">Name</th>
+            <th width="50">Pid</th>
+            <th width="50">Lft</th>
+            <th width="50">Rgt</th>
+            <th width="260">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($page->items as $pa_category) { ?>
+            <tr>
+                <td><?php echo $pa_category->id ?></td>
+                <td><?php echo $pa_category->name ?></td>
+                <td><?php echo $pa_category->pid ?></td>
+                <td><?php echo $pa_category->lft ?></td>
+                <td><?php echo $pa_category->rgt ?></td>
+                <td>
+                    <?php echo $this->tag->linkTo(array("pa_category/child/" . $pa_category->id, "新增子节点", "class" => "btn btn-success")); ?>
+                    <?php echo $this->tag->linkTo(array("pa_category/edit/" . $pa_category->id, "编辑", "class" => "btn btn-default")); ?>
+                    <?php #echo $this->tag->linkTo(array("pa_category/delete/" . $pa_category->id, "删除", "class" => "btn btn-danger")); ?>
+                </td>
+            </tr>
+        <?php } ?>
+        </tbody>
+    </table>
+    <div class="text-l mt-20">
+        <?php echo $this->tag->linkTo(array("pa_category/search", "First", "class" => "btn btn-default")) ?>
+        <?php echo $this->tag->linkTo(array("pa_category/search?page=" . $page->before, "Previous", "class" => "btn btn-default")) ?>
+        <?php echo $this->tag->linkTo(array("pa_category/search?page=" . $page->next, "Next", "class" => "btn btn-default")) ?>
+        <?php echo $this->tag->linkTo(array("pa_category/search?page=" . $page->last, "Last", "class" => "btn btn-default")) ?>
+        <span class="label label-primary"><?php echo $page->current, "/", $page->total_pages ?></span>
+    </div>
+</div>
